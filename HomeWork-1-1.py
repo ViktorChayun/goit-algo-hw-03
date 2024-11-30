@@ -7,9 +7,9 @@ from datetime import datetime, timedelta
 # Якщо задана дата пізніша за поточну, результат має бути від'ємним.
 # У розрахунках необхідно враховувати лише дні, ігноруючи час (години, хвилини, секунди).
 def get_days_from_today(date): 
+    curr = datetime.today().date()
     try:
         date_obj = datetime.strptime(date,"%Y-%m-%d").date()
-        curr = datetime.today().date()
     except ValueError:
         return None
     

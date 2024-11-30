@@ -21,7 +21,7 @@ def normalize_phone(phone_number):
     pattern = r"[^\d]"
     formatted_phone_number = re.sub(pattern, "", phone_number)
     
-    # перевіряємо чи починається номер з коду країни
+    # перевіряємо чи починається номер з коду країни і формуємо правильний префікс
     prefix = "+" if formatted_phone_number.startswith("38") else "+38"    
     formatted_phone_number = prefix + formatted_phone_number
     

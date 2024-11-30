@@ -16,7 +16,7 @@ import random
 """
 def get_numbers_ticket(min, max, quantity):
     # перевірка на коеректність введених папарметрів
-    if not guality_check_done(min, max, quantity):
+    if not quality_check_done(min, max, quantity):
         return []
     
     # генеруємо список можливих номерів в заданому діапазоні
@@ -28,7 +28,7 @@ def get_numbers_ticket(min, max, quantity):
     
     return res
 
-def guality_check_done(min, max, quantity):
+def quality_check_done(min, max, quantity):
     # працюємо лише з цілими числами
     if not isinstance(min, int) or not isinstance(max, int) or not isinstance(quantity, int):
         return False
@@ -70,8 +70,8 @@ values_for_check = [
 for val in values_for_check:
     min, max, quantity = val["min"], val["max"], val["quantity"]
     
-    quality_check= guality_check_done(min, max, quantity)
+    quality_check= quality_check_done(min, max, quantity)
     func_res = get_numbers_ticket(min, max, quantity)
     
-    print(f"guality_check_done(min={min},max={max}, quantity = {quantity}) = {quality_check}")
+    print(f"quality_check_done(min={min},max={max}, quantity = {quantity}) = {quality_check}")
     print(f"get_numbers_ticket(min={min},max={max}, quantity = {quantity}) = {func_res}\n")
